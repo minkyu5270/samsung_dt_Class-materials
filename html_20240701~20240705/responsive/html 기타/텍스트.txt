@@ -1,0 +1,164 @@
+# HTML-CSS
+
+# HTTP://192.168.0.1
+
+Hypertext Transfer Protocol
+
+# FTP
+
+File Transfer Protocol
+
+## 제목
+
+### 기타 용어들
+
+중첩(Nesting)
+
+부모-자식 관계 (Parent-Children)
+
+형제 (Sibling)
+
+상속(Inheritance)
+
+- 메타 / 구조적 글쓰기
+
+<aside>
+💡 어쩌구 저쩌구
+
+</aside>
+
+# Meta
+
+refers to itself
+
+### open graph
+
+[충격적인 미국 주차 문화.jpg : MLBPARK](https://mlbpark.donga.com/mp/b.php?p=1&b=bullpen&id=202407010094562007&select=&query=&subselect=&subquery=&user=&site=&reply=&source=&pos=&sig=h6jLSY-gi3HRKfX2hfj9Sl-Yjhlq)
+
+## <img> tag
+
+`<img src="">`
+
+1. URL
+2. 로컬 파일 주소
+    1. 절대 경로
+    2. 상대 경로 (이 문서의 위치를 기준으로)
+        - . : 현재 폴더
+        - .. : 상위 폴더
+
+### 대체 텍스트 (Alternate Text)
+
+- 접근성 (Accessibility)
+
+### URL Scheme
+
+테이블 태그
+
+### URL
+
+Uniform Resource Locator. 어떠한 정보 또는 자원의 위치를 표현하기 위한 규격
+`프로토콜://사용자정보@호스트:포트/경로?쿼리#프래그먼트`
+
+`localhost`
+
+`127.0.0.1`
+
+`192.168.0.1`
+
+# CSS
+
+## 선택자 Selector
+
+- Type Selector
+- 클래**스,  ID, 전**체
+- 속성
+
+## 선언부 Declaration
+
+요소 Element
+
+# 제목
+
+# `h1 .heavy`
+
+# `h1.heavy`
+
+## 주석(Comment)
+
+코드 안에 쓰는 건데 처리가 안되는 문자열
+
+### HTML의 주석
+
+`<!--` 주석 `-->`
+
+### CSS의 주석
+
+`/*` 주석 `*/`
+
+[CSS](https://www.notion.so/CSS-313e9633496b4f339dea3f444d85feb0?pvs=21)
+
+### emmet
+
+`Ctrl` + `Shift` + `P` > Wrap with abbreviation
+
+ 
+
+# git vs github
+
+git repository
+
+initial commit
+
+**CMD**
+
+- **Shell**
+- **디렉토리(Directori**es)
+- `dir`
+    - `dir /a:h`
+- `cd` - change directory
+    - root
+- `git`
+    - `git init`
+    - `git status`
+    - `git add`
+        - `git add .`
+    - `git commit`
+        - `git commit -m "intial commit”`
+        - git commit 해버렸을 경우 빠져나오는 방법
+            - `ESC` - `:q` 안되면 `:wq`
+
+## Git
+
+- Repository
+- Branch
+    - Branch `main`
+- Merge
+- Commit
+- Push
+- Pull
+- main
+
+### GUI vs CLI
+
+- Graphic User Interface - GUI
+    - Mouse
+- Command Line Interface - CLI
+
+# github
+
+- 깃헙에 가입하고
+- 나의 로컬 repository를 깃헙과 연결
+
+```css
+.page:nth-of-type(1) {
+    background-color: rgb(76, 124, 197);
+    color: white;
+}
+```
+
+### Viewport
+
+- Viewport Width `vw` : `100vw`
+- Viewport Height `vh` : `100vh`
+
+## CSS Nesting

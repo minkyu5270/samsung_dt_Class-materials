@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>연습문제-캥거루 블로그 만들기</title>
+    <!-- 시멘틱 태그 사용하기, float 속성 사용하기 -->
+    <style>
+      /* 초기화코드 */
+      * {
+        margin: 1px;
+        padding: 0;
+        /* 내용물이 넘치면 보이지 않도록 */
+        overflow: hidden;
+        /* border: 1px solid red; */
+        background-color: gray;
+      }
+      p1 {
+        background-color: white;
+        margin: 10px;
+        padding: 10px;
+      }
+      header {
+        border: 1px solid black;
+        text-align: center;
+        background-color: white;
+        margin-top: 1px;
+      }
+      footer {
+        border: 1px solid black;
+        text-align: center;
+        background-color: white;
+      }
+      h1 {
+        text-align: center;
+      }
+      aside {
+        float: left;
+        width: 15%;
+        border: 1px solid black;
+      }
+      section {
+        float: right;
+        width: 80%;
+        margin-bottom: 10px;
+      }
+      footer {
+        clear: both;
+        height: 50px;
+        line-height: 50px;
+      }
+      h3 {
+        margin: 10px;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>캥거루- Kangaroo</h1>
+    <header>About history kangaroo sns</header>
+
+    <main>
+      <aside>
+        <h2>캥거루</h2>
+
+        <img src="a1.jpg" width="100" alt="캥거루" />
+        <nav>
+          <ul>
+            <li><a href="#">● 개요</a></li>
+            <li><a href="#">● 상세</a></li>
+            <li><a href="#">● 분류</a></li>
+            <li><a href="#">● 굉장한 근육</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section>
+        <h3>kangaroo</h3>
+        <br />
+        <p>
+          캥거루과에 속하는 포유류 동물들의 총칭이다. 호주 대륙에 서식하며
+          나무타기캥거루 등의 일부 종들은 뉴기니에도 산다. 뉴기니의 존재감이
+          약하고 수적으로 호주에 많이 서식하는 관계로, 호주 그 자체를 상징하는
+          말로도 쓰이고, 호주 국장에도 들어간 동물이다. 호주의 플래그 캐리어인
+          콴타스도 별칭이 '플라잉 캥거루'[2], 호주 축구 국가대표팀의 별명도
+          '사커루'다.[3] 호주발 유럽 항로도 캥거루 루트라고 불릴 정도. 호주
+          정부의 추산으로는 2016년 기준으로, 호주에 캥거루 4500만 마리가
+          서식한다고 한다. 호주 국민이 2500만 명이니, 캥거루의 머릿수가 호주
+          국민보다 1.8배 더 많은 격이다!
+        </p>
+        <br />
+        <p>
+          특이사항으로 수컷 캥거루는 성년이 되면 위의 이미지처럼 거의 근육질이
+          된다고 하는데, 나이를 먹을수록 피하지방이 줄어들면서 근육의 윤곽이
+          선명해진다. 실제로 캥거루가 앞다리를 단련한다기보다는 체중이
+          증가하면서 뒷다리만으로 버티기에 부담스러워지고 자연스럽게 앞다리에
+          체중을 싣게 되어 저렇게 근육질이 되는 것이다. 자세를 보면 네 발로 걸을
+          때 자세가 푸쉬업 자세와 동일하다. 항시 푸쉬업을 하며 돌아다니는 셈이니
+          노령일수록 더더욱 근육이 많아지는 것. 뒷다리가 약해진 만큼 앞다리가
+          튼튼해지니 전체적으로 위험도는 더 올라간다.
+        </p>
+        <p>참조 : 나무위키 - 캥거루</p>
+      </section>
+    </main>
+
+    <footer>
+      <p1>캥거루 이미지</p1>
+    </footer>
+  </body>
+</html>

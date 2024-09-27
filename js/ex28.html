@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>2차 배열</title>
+    <script>
+        //1차 배열
+        let nums = [10, 20, 30];
+        //2차 배열 인덱스 0  1   2
+        let nums2D = [// 1열 2열 3열 COL (칸)  j루프
+                        [10,20,30], //1행 ROW(줄) 인덱스 0    i루프
+                        [40,50,60], //2행                1  
+                        [70,80,90]  //3행                2
+                     ];
+                    //행인덱스 열인덱스
+    console.log(nums2D[0][0]);
+    console.log(nums2D[2][1]);
+    
+    //nums2D.length : 행의 갯수
+    //nums2D[0].length : 열의 갯수
+
+    for(let i = 0; i<nums2D.length; i++){
+        for(let j=0; j<nums2D[0].length; j++){
+            console.log(nums2D[i][j]);
+        }
+    }
+
+    // 연습문제 - DM 제출
+    //1. num2D의 모든 요소에서 최대값을 출력하시오.
+    let flatArray = nums2D.flat();
+    let maxValue = Math.max.apply(null, flatArray);
+
+    console.log(`문제 1번 max는 ${maxValue}이다`);
+
+    //강사님 풀이
+    let max = Number.MIN_SAFE_INTEGER; // 최소값
+    for(let i = 0; i<nums2D.length; i++){
+        for(let j=0; j<nums2D[0].length; j++){
+            if (max < nums2D[i][j]){
+                max = nums2D[i][j];
+            }
+        }
+    }
+    console.log( max );
+    
+    //2. num2D의 모든 요소의 합을 구하시오. sum = sum + n
+    let sum = 0;
+    for (let i =0; i<nums2D.length; i++){
+        for(let j=0; j<nums2D[0].length; j++){
+            sum += nums2D[i][j];
+        }
+    }   console.log(`문제2번 ${sum}`);
+    
+    // 강사님 풀이
+    let sumer = 0;
+    for(let i = 0; i<nums2D.length; i++){
+        for(let j=0; j<nums2D[0].length; j++){
+            sumer = sumer +nums2D[i][j]; // sum = sum + n
+        }
+    }
+    console.log( sumer );
+    
+    //3. 학생정보를 담고 있는 2차배열을 선언하고,
+    let students = [ //학번, 이름,영어점수, 나이
+                    [1,'홍길동',70,20],
+                    [2,'변사또',60,30],
+                    [3,'사임당',50,40],
+                    [4,'김진사',90,50],
+                  ];
+    //영어점수가 가장 높은 학생의 이름을 출력하시오.
+    let maxScore = -1; // 초기 최대 영어 점수 설정 (음수로 설정하여 모든 점수와 비교 가능)
+    let topStudent = ''; // 최고 영어 점수 학생의 이름을 저장할 변수
+
+    // 학생 배열을 순회하면서 영어 점수 비교
+    for (let i = 0; i < students.length; i++) {
+        if (students[i][2] > maxScore) { // 현재 학생의 영어 점수가 maxScore보다 크면
+            maxScore = students[i][2]; // maxScore를 업데이트
+            topStudent = students[i][1]; // 해당 학생의 이름을 topStudent에 저장
+        }
+    } console.log(`영어 점수가 가장 높은 학생은 ${topStudent}입니다.`);
+
+    //강사님 풀이
+    let maxSC = 0;
+    for (let student of students){
+        console.log(student);
+        console.log(student[2]);
+        if (maxSC < student[2] ){
+            maxSC = student[2];
+        }
+    }
+    console.log("최대점수:" + maxSC);
+
+    //4. 전체학생의 평균 나이를 출력하시오. 소수점 제거
+    let sums = 0;
+    for (let i = 0; i < students.length; i++){
+            sums += students[i][3];
+    }
+     sume = sums / students.length;
+     console.log(sume);
+         
+    // 강사님 풀이
+    let sumage = 0;
+    for (let student of students){
+        sumage = sumage + student[2];
+
+    }
+    console.log("총 나이: " + sumage);
+    console.log("평균 나이: " + Math.floor(sumage/students.length));
+
+    //5. 영어점수가 가장 높은 학생부터 학생이름과 영어점수를 출력하시오.
+    //출력예)
+    // 1 김진사 90
+    // 2 홍길동 70
+    // 3 변사또 60
+    // 4 사임당 50
+    // *힌트 : push()함수 - 배열에 요소를 추가해주는 함수
+    //       : sort() 함수
+    //       ex) 배열이름.sort((a,b) => return b-a); 
+    //       0보다 큰값 리턴하면 더 큰값, 
+    //       0보다 작은 값 리턴하면 더 작은 값으로 정렬. 
+
+    nums2D.sort((a,b) => {return b[0]-a[0];});
+    for(let nums of nums2D){
+        console.log(nums);
+    }
+
+    students.sort((a, b) => b[2] - a[2]);
+    // 결과 출력
+    for (let i = 0; i < students.length; i++) {
+        let student = students[i];
+        console.log(`${i + 1} ${student[1]} ${student[2]}`);
+    }
+
+    //강사님 풀이
+    // 기본적인 정렬 알고리즘 : 버블, 선택, 삽입 정렬
+    students.sort( (a, b) => b[2]-a[2]);
+    //정렬 알고리즘 이름 : TIM Sort
+    //Insertion SORT와 MA
+    console.log(students);
+
+    let index =1;
+    for(let student of students){
+        console.log(`${index} ${student[1]} ${student[2]}`);
+    }
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,4 @@
+1. html/css 기초 => web page => [react]
+
+내문서 > html 폴더 생성
+VSCODE

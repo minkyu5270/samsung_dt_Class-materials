@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습문제 - 다음로그인화면을 구현하시오.</title>
+    <!-- 다음 홈페이지의 로그인 화면을 유사하게 제작하시오. -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:visited {
+        color: black;
+      }
+      #wrap {
+        /* 전체 박스 */
+        width: 578px;
+        height: auto;
+        margin: min(50px, 5%) auto; /* www */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #header {
+        /* kakao 로고 */
+        width: 88px;
+        height: 27px;
+        background-image: url("./logo_kakao.png");
+        background-size: 100px 80px;
+        margin: 77px auto 40px auto;
+      }
+      #main {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid gray;
+        padding: 50px;
+      }
+      #main input[type="text"],
+      [type="password"] {
+        width: 100%;
+        height: 50px;
+        /* 아이디, 비밀번호 입력창 */
+      }
+      /* #main input[type="text"]:focus,
+      [type="password"]:focus {
+        /* 아이디, 비밀번호 입력창(focus) */
+
+      .keep_status {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .keep_status input[type="checkbox"] {
+        /* 로그인 상태 유지 체크박스 */
+
+        background-image: url(./ico_comm.png);
+        background-size: 300px 300px;
+        background-position: 0px 0px;
+      }
+
+      .keep_status input[type="checkbox"]:checked {
+        /* 로그인 상태 유지 체크박스 */
+        background-image: url(./ico_comm.png);
+        background-size: 300px 300px;
+        background-position: -26px 0px;
+      }
+
+      .keep_status span {
+        /* 로그인 상태 유지 */
+        display: inline-block;
+        font-size: 14px;
+        /* padding-top: 25px;
+        padding-bottom: 40px; */
+        position: relative;
+        /* top: 8px; */
+      }
+
+      .keep_status button {
+        /* 로그인 상태 유지 옆 i */
+        background-color: transparent;
+        width: 18px;
+        height: 18px;
+        background-image: url("./ico_comm.png");
+        background-size: 300px 300px;
+        background-position: -120px -110px;
+        border-width: 0px;
+        cursor: pointer;
+      }
+      .keep_status input[type="button"]:hover {
+        background-color: whtie;
+        color: white;
+      }
+
+      #main input[type="submit"],
+      [type="button"] {
+        /* 로그인, QR코드 로그인 */
+        display: block;
+        width: 444px;
+        height: 45px;
+        border: 0px;
+        font-size: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #main input[type="submit"] {
+        /* 로그인 */
+        background-color: #fee500;
+      }
+      #main input[type="submit"]:hover {
+        /* 로그인(hover)*/
+        background-color: #f0d800;
+      }
+      #main input[type="button"]:hover {
+        /* QR코드 로그인(hover)*/
+        background-color: #dadada;
+      }
+
+      .line {
+        /* 또는 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .right {
+        display: flex;
+        gap: 10px;
+      }
+      .bottom a {
+        font-size: 12px;
+      }
+
+      #footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 5%;
+      }
+      #footer a {
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px;
+      }
+      select {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 0px;
+      }
+
+      #main #img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+      }
+      a {
+        /* 회원가입, 계정 찾기, 비밀번호 찾기, footer */
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header"></div>
+      <div id="main">
+        <form action="http://myserver.com">
+          <input
+            type="text"
+            placeholder="카카오메일 아이디, 이메일, 전화번호"
+            style="border: 0px; border-bottom: 1px solid gray"
+          />
+          <input
+            type="password"
+            placeholder="비밀번호"
+            style="border: 0px; border-bottom: 1px solid gray"
+          />
+          <div class="keep_status">
+            <input type="checkbox" /><span>
+              &nbsp;간편한 로그인 정보 저장&nbsp;</span
+            >
+            <button></button>
+          </div>
+          <input type="submit" value="로그인" /> <br />
+
+          <p class="line">&nbsp;&nbsp;&#45;또는&#45;&nbsp;&nbsp;</p>
+          <br />
+          <a href="#"><input type="button" value="QR코드 로그인" /></a>
+          <br />
+          <div class="bottom">
+            <a href="#">&nbsp;회원가입&nbsp;</a>
+            <div class="rights">
+              <a href="#">&nbsp;계정 찾기&nbsp;</a>
+              <span class="bar">&nbsp;|&nbsp;</span>
+              <a href="#">&nbsp;비밀번호 찾기&nbsp;</a>
+            </div>
+          </div>
+          <div id="img">
+            <img src="img_bnr_ko.png" width="70%" alt="통합되지 않은 다음 id" />
+          </div>
+        </form>
+      </div>
+      <div id="footer">
+        <a href="#">비밀번호 찾기</a>
+        <a href="#">이용약관</a>
+        <a href="#">개인정보 처리방침</a>
+        <a href="#">운영정책</a>
+        <div class="link">
+          <select>
+            <option>한국어</option>
+            <option>English</option>
+            <option>日本語</option>
+          </select>
+        </div>
+        <span style="font-size: 11px; padding: 6px">
+          Copyright © Kakao Corp. All rights reserved.
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

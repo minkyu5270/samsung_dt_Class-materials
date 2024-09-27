@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>if문 연습문제</title>
+    <script>
+        //연습문제
+        //1. 단일 if문
+        let num  = 10;
+        // num이 2의 배수이면, "2의 배수입니다."라고 출력하시오.
+        if (num % 2 == 0) {
+            document.write("2의 배수입니다. <br>");
+            //console.log("2의 배수입니다. <br>");
+        }
+        // 2. if else문
+        // num이 3의 배수이면, "3의 배수입니다."
+        // 3의 배수가 아니면  "3의 배수가 아닙니다."라고 출력하시오.
+        if (num % 3 == 0) {
+            document.write("3의 배수입니다. <br>");
+            //console.log("3의 배수입니다. <br>");
+        }else{
+            document.write("3의 배수가 아닙니다. <br>");
+            //console.log("3의 배수가 아닙니다. <br>");
+        }
+
+        // 3. if else if문
+        // num이 30보다 크면 "30보다 큽니다."
+        // 20보다 크면 "20보다 큽니다."
+        // 8보다 크면 "8보다 큽니다."
+        // 그외이면 "그외의 수입니다."라고 출력하시오.
+        if ( num > 30 ){
+            document.write("30보다 큽니다. <br>");
+            //console.log("30보다 큽니다. <br>");
+        }else if ( num > 20 ){
+            document.write("20보다 큽니다. <br>");
+            //console.log("20보다 큽니다. <br>");
+        }else if ( num > 8 ){
+            document.write("8보다 큽니다. <br>");
+           //console.log("8보다 큽니다. <br>");
+        }else{
+            document.write("그 외의 수입니다. <br>");
+            //console.log("그 외의 수입니다. <br>");
+        }
+
+        // 4. 중첩 if문
+        // num이 2의 배수이면서, 5의 배수이면
+        //"2의 배수이면서, 5의 배수입니다."
+        //2의 배수이면서, 5의 배수는 아니면
+        //"2의 배수이지만, 5의 배수는 아닙니다."라고 출력하시오.
+        if ( num % 2 == 0 ){
+            if ( num % 5 == 0 ){
+                document.write("2의 배수이면서 5의 배수입니다. <br>");
+                //console.log("2의 배수이면서 5의 배수입니다. <br>");
+            }else{
+                document.write("2의 배수이면서 5의 배수는 아닙니다. <br>");
+                //console.log("2의 배수이면서 5의 배수는 아닙니다. <br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

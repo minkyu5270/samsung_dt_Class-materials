@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 화면</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .form-group {
+        display: flex;
+        align-items: center;
+      }
+      .form-group input {
+        flex: 1;
+      }
+      .form-group button {
+        margin-left: 10px;
+      }
+      .alert {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap" class="container-fluid p-4" style="background-color: #eee">
+      <div class="row">
+        <div
+          class="container-fluid bg-white"
+          style="max-width: 1200px; border-radius: 20px"
+        >
+          <div class="row">
+            <!-- 입력폼 -->
+            <form id="formLogin">
+              <div class="col-12">
+                <h1 class="my-5 text-center">Sign up</h1>
+                <!-- 경고 메시지 -->
+                <div id="alert" class="alert alert-primary" role="alert">
+                  중복된 아이디가 있습니다.
+                </div>
+                <div id="alertWarning" class="alert alert-warning" role="alert">
+                  중복확인이 되어 있지 않습니다.
+                </div>
+                <div id="alertPassword" class="alert alert-danger" role="alert">
+                  암호가 서로 다릅니다.
+                </div>
+                <div id="alertEmpty" class="alert alert-danger" role="alert">
+                  입력되지 않는 항목이 있습니다.
+                </div>
+                <div id="alertTerms" class="alert alert-danger" role="alert">
+                  약관동의에 체크해 주세요.
+                </div>
+
+                <!-- Your Name 입력 필드와 중복확인 버튼 -->
+                <div class="mb-3 form-group">
+                  <div
+                    class="d-flex me-2 justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-user fa-xl"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputName"
+                    name="inputName"
+                    placeholder="Your Name"
+                  />
+                  <button
+                    id="idChkBtn"
+                    class="btn btn-primary"
+                    type="button"
+                    onclick="confirmId()"
+                  >
+                    중복확인
+                  </button>
+                </div>
+
+                <!-- 나머지 입력 필드들 -->
+                <div class="mb-3 d-flex flex-row">
+                  <div
+                    class="d-flex me-2 justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div style="width: 100%">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEmail"
+                      name="inputEmail"
+                      placeholder="Your Email"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3 d-flex flex-row">
+                  <div
+                    class="d-flex me-2 justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-lock fa-xl"></i>
+                  </div>
+                  <div style="width: 100%">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="inputPassword"
+                      name="inputPassword"
+                      placeholder="Your Password"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3 d-flex flex-row">
+                  <div
+                    class="d-flex me-2 justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-key"></i>
+                  </div>
+                  <div style="width: 100%">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="inputConfirmPassword"
+                      name="inputConfirmPassword"
+                      placeholder="Repeat your Password"
+                    />
+                  </div>
+                </div>
+
+                <!-- 약관 동의 체크박스 -->
+                <div class="mb-3">
+                  <input
+                    type="checkbox"
+                    id="termsCheckbox"
+                    name="termsCheckbox"
+                  />
+                  <label for="termsCheckbox" class="ms-2">
+                    약관에 동의합니다.
+                  </label>
+                </div>
+
+                <div
+                  class="mb-3 d-flex flex-row justify-content-center align-items-center gap-5"
+                >
+                  <div class="text-center my-5">
+                    <!-- 뒤로가기 버튼을 회색으로 설정 -->
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      onclick="goBack()"
+                    >
+                      뒤로가기
+                    </button>
+                  </div>
+                  <div class="text-center my-5">
+                    <!-- 회원가입 버튼을 파란색으로 설정 -->
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onclick="signup()"
+                    >
+                      회원가입
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

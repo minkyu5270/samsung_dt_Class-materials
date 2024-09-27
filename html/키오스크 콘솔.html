@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>키오스크 콘솔 프로그램</title>
+  </head>
+  <body>
+    <script>
+      const products = [
+        {
+          name: "베이컨버거",
+          price: 10000,
+          img: "burger1.png",
+        },
+      ];
+      document.write(
+        "-----------키오스크 콘솔 프로그램입니다. -------------<br><br>"
+      );
+
+      document.write("1.상품입력 2.전체출력 3.검색 4.수정 5.삭제 6.종료<br/>");
+      document.write("입력하세요:");
+      const inputNum = prompt(
+        "1.상품입력 2.전체출력 3.검색 4.수정 5.삭제 6.종료"
+      );
+      if (1 == Number(inputNum)) {
+        for (product of products) {
+          document.write(` ${inputNum}<br>`);
+          document.write("상품이름1:");
+          document.write(product.name + "<br>");
+          document.write("상품가격1:");
+          document.write(product.price + "<br>");
+          document.write("이미지 이름:");
+          document.write(product.img + "<br>");
+          document.write("상품 입력이 완료되었습니다.");
+        }
+      } else if (2 == Number(inputNum)) {
+        for (product of products) {
+          document.write(` ${inputNum}<br>`);
+          document.write("상품이름1:");
+          document.write(product.name + "<br>");
+          document.write("상품가격1:");
+          document.write(product.price + "<br>");
+          document.write("이미지 이름:");
+          document.write(product.img + "<br>");
+          document.write("전체 상품출력이 완료되었습니다.");
+        }
+      } else if (3 == Number(inputNum)) {
+        const searchTerm = prompt(
+          "검색할 상품 이름을 입력하세요(부분 문자만 입력해도 됩니다.)"
+        );
+
+        const results = products.filter((product) =>
+          product.상품이름.includes(searchTerm)
+        );
+
+        if (results.length > 0) {
+          for (const product of results) {
+            document.write(` ${inputNum}<br>`);
+            document.write("검색할 상품 이름:");
+            document.write(`${product.name}(일부 문자만 입력해도 됨)<br>`);
+            document.write(`검색된 상품 목록<br>`);
+            document.write("상품 이름1: " + product.name + "<br>");
+            document.write("상품 가격1: " + product.price + "<br>");
+            document.write("이미지 이름1: " + product.img + "<br>");
+          }
+          document.write("검색된 상품이 출력되었습니다.<br>");
+        } else {
+          document.write("검색된 상품이 없습니다.<br>");
+        }
+      }
+    </script>
+  </body>
+</html>

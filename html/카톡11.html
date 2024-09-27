@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습문제 - 다음로그인화면을 구현하시오.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #f2f2f2;
+      }
+      #wrap {
+        width: 578px;
+        height: auto;
+        margin: min(50px, 5%) auto;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      #header {
+        width: 88px;
+        height: 27px;
+        background-image: url("./logo_kakao.png");
+        background-size: cover;
+        margin: 77px auto 40px auto;
+      }
+      #main {
+        padding: 0 40px;
+      }
+      #main input[type="text"],
+      #main input[type="password"] {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      #main input[type="text"]:focus,
+      #main input[type="password"]:focus {
+        border-color: #999;
+        outline: none;
+      }
+      .keep_status {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .keep_status input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        appearance: none;
+        cursor: pointer;
+        background-image: url(./ico_comm.png);
+        background-size: 300px 300px;
+        background-position: 0px 0px;
+        margin-right: 8px;
+      }
+      .keep_status input[type="checkbox"]:checked {
+        background-position: -26px 0px;
+      }
+      .keep_status span {
+        font-size: 14px;
+      }
+      .keep_status button {
+        background-color: transparent;
+        width: 18px;
+        height: 18px;
+        background-image: url("./ico_comm.png");
+        background-size: 300px 300px;
+        background-position: -120px -110px;
+        border: none;
+        cursor: pointer;
+        margin-left: auto;
+      }
+      #main input[type="submit"],
+      #main input[type="button"] {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 10px;
+        border: none;
+        font-size: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #main input[type="submit"] {
+        background-color: #fee500;
+      }
+      #main input[type="submit"]:hover {
+        background-color: #f0d800;
+      }
+      #main input[type="button"] {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+      #main input[type="button"]:hover {
+        background-color: #dadada;
+      }
+      .line {
+        text-align: center;
+        color: #999;
+        margin: 20px 0;
+        font-size: 14px;
+      }
+      .line::before,
+      .line::after {
+        content: "";
+        display: inline-block;
+        width: 45%;
+        height: 1px;
+        background-color: #ddd;
+        vertical-align: middle;
+      }
+      .line::before {
+        margin-right: 10px;
+      }
+      .line::after {
+        margin-left: 10px;
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+      .bar {
+        margin: 0 10px;
+        color: #ddd;
+      }
+      #footer {
+        background-color: #f9f9f9;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        border-top: 1px solid #ddd;
+      }
+      #footer a {
+        color: #999;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      select {
+        padding: 5px;
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+      option {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header"></div>
+      <div id="main">
+        <form action="http://myserver.com">
+          <input
+            type="text"
+            placeholder="카카오메일 아이디, 이메일, 전화번호"
+          />
+          <input type="password" placeholder="비밀번호" />
+          <div class="keep_status">
+            <input type="checkbox" /><span>로그인 상태 유지</span>
+            <button></button>
+          </div>
+          <input type="submit" value="로그인" />
+
+          <p class="line">또는</p>
+          <a href="#"><input type="button" value="QR코드 로그인" /></a>
+          <div class="bottom">
+            <a href="#">회원가입</a>
+            <div>
+              <a href="#">계정 찾기</a><span class="bar">|</span
+              ><a href="#">비밀번호 찾기</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="footer">
+        <div class="link">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보 처리방침</a>
+          <a href="#">운영정책</a>
+          <a href="#">고객센터</a>
+          <a href="#">공지사항</a>
+          <select>
+            <option>한국어</option>
+            <option>English</option>
+            <option>日本語</option>
+          </select>
+        </div>
+        <span> Copyright © Kakao Corp. All rights reserved. </span>
+      </div>
+    </div>
+  </body>
+</html>
